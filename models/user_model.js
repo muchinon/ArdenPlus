@@ -8,6 +8,8 @@ const userSchema = new Schema({
     confirmPassword: { type: String, required: [true, 'Please confirm password'], select: false }
 })
 
+// Instance method
+// Returns true if passwords are the same
 userSchema.methods.comparePasswords = async function (pass, dbPass) {
     return await pass === dbPass
 }
